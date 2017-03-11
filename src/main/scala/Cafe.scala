@@ -3,12 +3,12 @@
   */
 class Cafe {
 
-  def buyCoffee(cc: CreditCard): Coffee = {
+  def buyCoffee(cc: CreditCard, p: Payments): Coffee = {
 
 
     val cup = new Cofee();
 
-    cc.charge(cup.price)
+    p.charge(cc, cup.price)
 
     cup
   }
