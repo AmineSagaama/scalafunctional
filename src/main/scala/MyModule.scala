@@ -4,9 +4,7 @@
 object MyModule {
 
   def main(args: Array[String]): Unit = {
-    println(formatAbs(-42))
-
-    println(formatFactorial(5))
+    println(findFirst(Array(7, 9, 13), (x: Int) => x == 9))
   }
 
   private def formatFactorial(n: Int) = {
@@ -46,11 +44,14 @@ object MyModule {
 
     def loop(n: Int): Int =
       if (n >= as.length) -1
-      else id(p(as(n))) n
+      else if (p(as(n))) n
 
-    else loop(n + 1)
+      else loop(n + 1)
 
     loop(0)
   }
+
+  def partial1[A, B, C](a: A, f: (A, B) => C): B => C =
+    b => f(a, b)
 
 }
