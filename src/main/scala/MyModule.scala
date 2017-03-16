@@ -5,6 +5,7 @@ object MyModule {
 
   def main(args: Array[String]): Unit = {
     println(findFirst(Array(7, 9, 13), (x: Int) => x == 9))
+    println(matchTest(5))
   }
 
   private def formatFactorial(n: Int) = {
@@ -53,5 +54,11 @@ object MyModule {
 
   def partial1[A, B, C](a: A, f: (A, B) => C): B => C =
     b => f(a, b)
+
+  def matchTest(x: Int): String = x match {
+    case 1 => "one"
+    case 2 => "Two"
+    case _ => "many"
+  }
 
 }
