@@ -6,6 +6,7 @@ object MyModule {
   def main(args: Array[String]): Unit = {
     println(findFirst(Array(7, 9, 13), (x: Int) => x == 9))
     println(matchTest(5))
+    println(matchTest2(10))
   }
 
   private def formatFactorial(n: Int) = {
@@ -59,6 +60,12 @@ object MyModule {
     case 1 => "one"
     case 2 => "Two"
     case _ => "many"
+  }
+
+  def matchTest2(x: Any): Any = x match {
+    case 1 => "one"
+    case "two" => 2
+    case y: Int => "Scala.int"
   }
 
 }
